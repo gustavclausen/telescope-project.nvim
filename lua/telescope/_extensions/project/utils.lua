@@ -149,7 +149,7 @@ end
 M.change_project_dir = function(project_path)
   if Path:new(project_path):exists() then
     M.update_last_accessed_project_time(project_path)
-    vim.fn.execute("cd " .. project_path, "silent")
+    vim.fn.execute("tcd " .. project_path, "silent")
     if sync_with_nvim_tree then
       M.open_in_nvim_tree(project_path)
     end
